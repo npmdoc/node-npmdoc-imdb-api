@@ -1,0 +1,736 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/worr/node-imdb-api">imdb-api (v2.2.2)</a>
+</h1>
+<h4>Queries unofficial imdb APIs to get movie and television information from imdb</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdb-api">module imdb-api</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">imdb-api.</span>__esModule</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.Episode">
+            function <span class="apidocSignatureSpan">imdb-api.</span>Episode
+            <span class="apidocSignatureSpan">(obj, season)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.ImdbError">
+            function <span class="apidocSignatureSpan">imdb-api.</span>ImdbError
+            <span class="apidocSignatureSpan">(message, movie)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.Movie">
+            function <span class="apidocSignatureSpan">imdb-api.</span>Movie
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.TVShow">
+            function <span class="apidocSignatureSpan">imdb-api.</span>TVShow
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.get">
+            function <span class="apidocSignatureSpan">imdb-api.</span>get
+            <span class="apidocSignatureSpan">(name, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.getById">
+            function <span class="apidocSignatureSpan">imdb-api.</span>getById
+            <span class="apidocSignatureSpan">(imdbid, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.getReq">
+            function <span class="apidocSignatureSpan">imdb-api.</span>getReq
+            <span class="apidocSignatureSpan">(req, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdb-api.</span>TVShow.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdb-api.</span>interfaces</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdb-api.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdb-api.TVShow">module imdb-api.TVShow</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.TVShow.TVShow">
+            function <span class="apidocSignatureSpan">imdb-api.</span>TVShow
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdb-api.TVShow.prototype">module imdb-api.TVShow.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.TVShow.prototype.constructor">
+            function <span class="apidocSignatureSpan">imdb-api.TVShow.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.TVShow.prototype.episodes">
+            function <span class="apidocSignatureSpan">imdb-api.TVShow.prototype.</span>episodes
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdb-api.interfaces">module imdb-api.interfaces</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">imdb-api.interfaces.</span>__esModule</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.interfaces.isEpisode">
+            function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isEpisode
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.interfaces.isError">
+            function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isError
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.interfaces.isMovie">
+            function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isMovie
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.interfaces.isTvshow">
+            function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isTvshow
+            <span class="apidocSignatureSpan">(response)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdb-api.util">module imdb-api.util</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">imdb-api.util.</span>__esModule</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdb-api.util.Inverter">
+            function <span class="apidocSignatureSpan">imdb-api.util.</span>Inverter
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdb-api" id="apidoc.module.imdb-api">module imdb-api</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.Episode" id="apidoc.element.imdb-api.Episode">
+        function <span class="apidocSignatureSpan">imdb-api.</span>Episode
+        <span class="apidocSignatureSpan">(obj, season)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Episode(obj, season) {
+    this.season = season;
+    for (var attr in obj) {
+        if (attr === "Released") {
+            var _a = obj[attr].split("-"), year = _a[0], month = _a[1], day = _a[2];
+            this.released = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+        }
+        else if (attr === "Rating") {
+            this[attr.toLowerCase()] = parseFloat(obj[attr]);
+        }
+        else if (attr === "Episode" || attr === "Season") {
+            this[attr.toLowerCase()] = parseInt(obj[attr]);
+        }
+        else if (attr === "Title") {
+            this.name = obj[attr];
+        }
+        else if (obj.hasOwnProperty(attr) &amp;&amp; trans_table.get(attr) !== undefined) {
+            this[trans_table.get(attr)] = obj[attr];
+        }
+        else if (obj.hasOwnProperty(attr)) {
+            this[attr.toLowerCase()] = obj[attr];
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.ImdbError" id="apidoc.element.imdb-api.ImdbError">
+        function <span class="apidocSignatureSpan">imdb-api.</span>ImdbError
+        <span class="apidocSignatureSpan">(message, movie)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ImdbError(message, movie) {
+    this.message = message;
+    this.movie = movie;
+    this.name = "imdb api error";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.Movie" id="apidoc.element.imdb-api.Movie">
+        function <span class="apidocSignatureSpan">imdb-api.</span>Movie
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Movie(obj) {
+    for (var attr in obj) {
+        if (attr === "year" || attr.toLowerCase() === "year") {
+            this["_year_data"] = obj[attr];
+            if (!obj[attr].match(/\d{4}[\-â€“]\d{4}/)) {
+                this[attr.toLowerCase()] = parseInt(obj[attr]);
+            }
+        }
+        else if (attr === "Released") {
+            this.released = new Date(obj[attr]);
+        }
+        else if (attr === "Rating") {
+            this[attr.toLowerCase()] = parseFloat(obj[attr]);
+        }
+        else if (obj.hasOwnProperty(attr) &amp;&amp; trans_table.get(attr) !== undefined) {
+            this[trans_table.get(attr)] = obj[attr];
+        }
+        else if (obj.hasOwnProperty(attr)) {
+            this[attr.toLowerCase()] = obj[attr];
+        }
+    }
+    this.series = this.type === "movie" ? false : true;
+    this.imdburl = "https://www.imdb.com/title/" + this.imdbid;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.TVShow" id="apidoc.element.imdb-api.TVShow">
+        function <span class="apidocSignatureSpan">imdb-api.</span>TVShow
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TVShow(object) {
+    var _this = _super.call(this, object) || this;
+    _this._episodes = [];
+    var years = _this["_year_data"].split("-");
+    _this.start_year = parseInt(years[0]) ? parseInt(years[0]) : null;
+    _this.end_year = parseInt(years[1]) ? parseInt(years[1]) : null;
+    _this.totalseasons = parseInt(_this["totalseasons"]);
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.get" id="apidoc.element.imdb-api.get">
+        function <span class="apidocSignatureSpan">imdb-api.</span>get
+        <span class="apidocSignatureSpan">(name, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(name, cb) {
+    return getReq({ id: undefined, name: name }, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+let movie;
+
+imdb.getReq({ name: 'The Toxic Avenger' }, (err, things) =&gt; {
+    movie = things;
+});
+
+// Promises!
+imdb.<span class="apidocCodeKeywordSpan">get</span>('The Toxic Avenger').then(console.log);
+imdb.getById('tt0090190').then(console.log);
+imdb.getReq({ name: 'The Toxic Avenger' }).then(console.log);
+```
+DATA
+```js
+console.log(movie);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.getById" id="apidoc.element.imdb-api.getById">
+        function <span class="apidocSignatureSpan">imdb-api.</span>getById
+        <span class="apidocSignatureSpan">(imdbid, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getById(imdbid, cb) {
+    return getReq({ id: imdbid, name: undefined }, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+imdb.getReq({ name: 'The Toxic Avenger' }, (err, things) =&gt; {
+    movie = things;
+});
+
+// Promises!
+imdb.get('The Toxic Avenger').then(console.log);
+imdb.<span class="apidocCodeKeywordSpan">getById</span>('tt0090190').then(console.log);
+imdb.getReq({ name: 'The Toxic Avenger' }).then(console.log);
+```
+DATA
+```js
+console.log(movie);
+
+Movie {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.getReq" id="apidoc.element.imdb-api.getReq">
+        function <span class="apidocSignatureSpan">imdb-api.</span>getReq
+        <span class="apidocSignatureSpan">(req, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getReq(req, cb) {
+    var responseData = "";
+    var qs = { plot: "full", r: "json", y: req.year };
+    if (req.name) {
+        qs["t"] = req.name;
+    }
+    else if (req.id) {
+        qs["i"] = req.id;
+    }
+    var prom = rp({ "qs": qs, url: omdbapi, json: true }).then(function (data) {
+        var ret;
+        if (interfaces_1.isError(data)) {
+            var err = new ImdbError(data.Error + ": " + (req.name ? req.name : req.id), req);
+            if (cb) {
+                return cb(err, undefined);
+            }
+            else {
+                return Promise.reject(err);
+            }
+        }
+        else {
+            if (interfaces_1.isMovie(data)) {
+                ret = new Movie(data);
+            }
+            else if (interfaces_1.isTvshow(data)) {
+                ret = new TVShow(data);
+            }
+            else if (interfaces_1.isEpisode(data)) {
+                ret = new Episode(data, 30);
+            }
+            else {
+                var err = new ImdbError("type: " + data.Type + " not valid", req);
+                if (cb) {
+                    return cb(err, undefined);
+                }
+                else {
+                    return Promise.reject(err);
+                }
+            }
+            if (cb) {
+                return cb(undefined, ret);
+            }
+            return Promise.resolve(ret);
+        }
+    });
+    if (cb) {
+        prom["catch"](function (err) {
+            cb(err, undefined);
+        });
+    }
+    else {
+        return prom;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+const imdb = require('imdb-api');
+```
+Call get/getReq/getById
+```js
+let movie;
+
+imdb.<span class="apidocCodeKeywordSpan">getReq</span>({ name: 'The Toxic Avenger' }, (err, things) =&gt; {
+    movie = things;
+});
+
+// Promises!
+imdb.get('The Toxic Avenger').then(console.log);
+imdb.getById('tt0090190').then(console.log);
+imdb.getReq({ name: 'The Toxic Avenger' }).then(console.log);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdb-api.TVShow" id="apidoc.module.imdb-api.TVShow">module imdb-api.TVShow</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.TVShow.TVShow" id="apidoc.element.imdb-api.TVShow.TVShow">
+        function <span class="apidocSignatureSpan">imdb-api.</span>TVShow
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TVShow(object) {
+    var _this = _super.call(this, object) || this;
+    _this._episodes = [];
+    var years = _this["_year_data"].split("-");
+    _this.start_year = parseInt(years[0]) ? parseInt(years[0]) : null;
+    _this.end_year = parseInt(years[1]) ? parseInt(years[1]) : null;
+    _this.totalseasons = parseInt(_this["totalseasons"]);
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdb-api.TVShow.prototype" id="apidoc.module.imdb-api.TVShow.prototype">module imdb-api.TVShow.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.TVShow.prototype.constructor" id="apidoc.element.imdb-api.TVShow.prototype.constructor">
+        function <span class="apidocSignatureSpan">imdb-api.TVShow.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TVShow(object) {
+    var _this = _super.call(this, object) || this;
+    _this._episodes = [];
+    var years = _this["_year_data"].split("-");
+    _this.start_year = parseInt(years[0]) ? parseInt(years[0]) : null;
+    _this.end_year = parseInt(years[1]) ? parseInt(years[1]) : null;
+    _this.totalseasons = parseInt(_this["totalseasons"]);
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.TVShow.prototype.episodes" id="apidoc.element.imdb-api.TVShow.prototype.episodes">
+        function <span class="apidocSignatureSpan">imdb-api.TVShow.prototype.</span>episodes
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">episodes = function (cb) {
+    if (this._episodes.length !== 0) {
+        return cb(undefined, this._episodes);
+    }
+    var tvShow = this;
+    var funcs = [];
+    for (var i = 1; i &lt;= tvShow.totalseasons; i++) {
+        funcs.push(rp({ "qs": { "i": tvShow.imdbid, "r": "json", "Season": i }, "json": true, "url": omdbapi }));
+    }
+    var prom = Promise.all(funcs)
+        .then(function (ep_data) {
+        var eps = [];
+        for (var key in ep_data) {
+            var datum = ep_data[key];
+            if (interfaces_1.isError(datum)) {
+                var err = new ImdbError(datum.Error, undefined);
+                if (cb) {
+                    return cb(err, undefined);
+                }
+                return Promise.reject(err);
+            }
+            else {
+                var season = parseInt(datum.Season);
+                for (var ep in datum.Episodes) {
+                    eps.push(new Episode(datum.Episodes[ep], season));
+                }
+            }
+        }
+        tvShow._episodes = eps;
+        if (cb) {
+            return cb(undefined, eps);
+        }
+        return Promise.resolve(eps);
+    });
+    if (cb) {
+        prom["catch"](function (err) {
+            return cb(err, undefined);
+        });
+    }
+    else {
+        return prom;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  imdburl: 'https://www.imdb.com/title/tt0090190' }
+```
+How do I get series episodes?
+
+Well, it's a promise (or a function that takes a callback).
+```js
+imdb.get('How I Met Your Mother').then(things =&gt; {
+    things.<span class="apidocCodeKeywordSpan">episodes</span>().then(console.log);
+});
+
+imdb.get('How I Met Your Mother', (err, things) =&gt; {
+    things.episodes((err, moreThings) =&gt; console.log(moreThings));
+});
+
+...
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdb-api.interfaces" id="apidoc.module.imdb-api.interfaces">module imdb-api.interfaces</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.interfaces.isEpisode" id="apidoc.element.imdb-api.interfaces.isEpisode">
+        function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isEpisode
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isEpisode(response) {
+    return response.Type === "episode";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.interfaces.isError" id="apidoc.element.imdb-api.interfaces.isError">
+        function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isError
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isError(response) {
+    return response.Response === "False";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.interfaces.isMovie" id="apidoc.element.imdb-api.interfaces.isMovie">
+        function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isMovie
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isMovie(response) {
+    return response.Type === "movie";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.interfaces.isTvshow" id="apidoc.element.imdb-api.interfaces.isTvshow">
+        function <span class="apidocSignatureSpan">imdb-api.interfaces.</span>isTvshow
+        <span class="apidocSignatureSpan">(response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isTvshow(response) {
+    return response.Type === "series";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdb-api.util" id="apidoc.module.imdb-api.util">module imdb-api.util</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdb-api.util.Inverter" id="apidoc.element.imdb-api.util.Inverter">
+        function <span class="apidocSignatureSpan">imdb-api.util.</span>Inverter
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Inverter(obj) {
+    this.obj = obj;
+    this.rev_obj = {};
+    for (var attr in obj) {
+        this.rev_obj[obj[attr]] = attr;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
